@@ -1,8 +1,9 @@
-const AI_PROVIDER = (process.env.AI_PROVIDER || 'mistral').toLowerCase();
+const AI_PROVIDER = (process.env.AI_PROVIDER || 'groq').toLowerCase();
 
 const FALLBACK_MAP = {
-  mistral: 'claude',
-  claude: 'mistral',
+  groq: 'mistral',
+  mistral: 'groq',
+  claude: 'groq',
 };
 
 let providerInstance = null;
@@ -10,6 +11,10 @@ let fallbackProviderInstance = null;
 
 const createProvider = (name) => {
   switch (name) {
+    case 'groq': {
+      const { GroqProvider } = require('./groq');
+      return new GroqProvider();
+    }
     case 'mistral': {
       const { MistralProvider } = require('./mistral');
       return new MistralProvider();
@@ -19,7 +24,7 @@ const createProvider = (name) => {
       return new ClaudeProvider();
     }
     default:
-      throw new Error(`Invalid AI_PROVIDER: "${name}". Supported providers: mistral, claude`);
+      throw new Error(`Invalid AI_PROVIDER: "${name}". Supported providers: groq, mistral, claude`);
   }
 };
 

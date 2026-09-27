@@ -10,6 +10,8 @@ const ALLOWED_CRONS = [
   'sendNewsResume',
   'sendCve',
   'sendCTFChallenge',
+  'sendGithubTrends',
+  'learn',
   'sendRedditPost',
   'sendYoutubeResume',
   'sendGithubNotes',

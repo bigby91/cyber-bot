@@ -28,7 +28,7 @@ const generate = async (prompt, overrideParams = {}) => {
 
       return output;
     } catch (err) {
-      const isRateLimit = err.statusCode === 429 || err.status === 429;
+      const isRateLimit = err.statusCode === 429 || err.status === 429 || err.statusCode === 413 || err.status === 413;
 
       if (isRateLimit && providers.length === 1) {
         const fallback = getFallbackProvider();

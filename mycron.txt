@@ -1,0 +1,1 @@
+0 21 * * * export PATH=/data/data/com.termux/files/usr/bin && cd /data/data/com.termux/files/home/cyber-bot && npm run cron -- -c sendCTFChallenge >> /data/data/com.termux/files/home/cyber-bot/cron.log 2>&1

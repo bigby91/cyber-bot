@@ -145,7 +145,6 @@ const SENSITIVE_OUTPUT_PATTERNS = [
   /SUPADATA_KEY\s*[=:]/i,
   /SLACK_WEBHOOK_URL\s*[=:]/i,
   /YOUTUBE_API_KEY\s*[=:]/i,
-  /process\.env\.[A-Z_]+/i,
   /Bearer\s+[A-Za-z0-9\-_.~+/]+=*/i,
 ];
 

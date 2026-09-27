@@ -13,3 +13,12 @@ logs/
 assets/processed*
 coverage/
 update-deps.sh
+*.bak
+*.bak[0-9]
+*.backup
+bot.js.before-*
+bot.js.pre-*
+conversation_memory.json
+reminders.json
+*.env.example.bak
+data/
